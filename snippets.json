@@ -1,0 +1,48 @@
+{
+    "Экспорт стрелочной функции": {
+      "scope": "javascript,typescript,javascriptreact,typescriptreact",
+      "prefix": "eaf",
+      "body": [
+        "export const ${TM_FILENAME_BASE} = () => {",
+        " ",
+        "  return (",
+        "    <>",
+        "      $0",
+        "    </>",
+        "  );",
+        "};"
+      ],
+      "description": "Экспорт стрелочной функции с именем файла без расширения"
+    },
+    "Экспорт функции с именем файла": {
+      "scope": "javascript,typescript,javascriptreact,typescriptreact",
+      "prefix": "ef",
+      "body": [
+        "export function ${TM_FILENAME_BASE}() {",
+        " ",
+        "return (",
+        "    <>",
+        "      $0",
+        "    </>",
+        "  );",
+        "};"
+      ],
+      "description": "Создает экспортированную функцию с именем файла без расширения"
+    },
+    "Импорт стилей из CSS-модуля": {
+        "scope": "javascript,typescript,javascriptreact,typescriptreact",
+        "prefix": "imc",
+        "body": [
+          "import styles from './${TM_FILENAME_BASE/(.*)/${1:/downcase}/}.module.css';"
+        ],
+        "description": "Импорт стилей из CSS-модуля с именем файла в нижнем регистре"
+      },
+    "Импорт обычного CSS": {
+        "scope": "javascript,typescript,javascriptreact,typescriptreact",
+        "prefix": "ic",
+        "body": [
+          "import './${TM_FILENAME_BASE/(.*)/${1:/downcase}/}.css';"
+        ],
+        "description": "Импорт обычного CSS с именем файла в нижнем регистре"
+      }
+}
