@@ -94,4 +94,87 @@ export const Button = () => {
   /* Ваши стили */
 }
 ```
+
+Чтобы добавить пользовательские снипеты в Visual Studio Code, выполните следующие шаги:
+
+### 1\. Откройте меню снипетов
+
+1.  Откройте Visual Studio Code.
+
+2.  Перейдите в меню **File** (Файл) → **Preferences** (Настройки) → **Configure User Snippets** (Настройка пользовательских снипетов).
+
+3.  Выберите язык, для которого вы хотите добавить снипеты (например, JavaScript, TypeScript, React и т.д.). Если вы хотите добавить снипеты для нескольких языков, выберите **New Global Snippets file** (Новый глобальный файл снипетов).
+
+### 2\. Создайте или отредактируйте файл снипетов
+
+1.  Если вы выбрали конкретный язык, откроется файл снипетов для этого языка (например, `javascript.json`).
+
+2.  Если вы выбрали **New Global Snippets file**, вам будет предложено ввести имя для нового файла снипетов. Введите имя и нажмите Enter.
+
+### 3\. Вставьте свои снипеты
+
+1.  В открывшемся файле JSON вставьте ваш JSON с снипетами. Например, скопируйте и вставьте следующий код:
+
+json
+
+Copy
+
+{
+    "Экспорт стрелочной функции": {
+      "scope": "javascript,typescript,javascriptreact,typescriptreact",
+      "prefix": "eaf",
+      "body": [
+        "export const ${TM_FILENAME_BASE} = () => {",
+        " ",
+        "  return (",
+        "    <>",
+        "      $0",
+        "    </>",
+        "  );",
+        "};"
+      ],
+      "description": "Экспорт стрелочной функции с именем файла без расширения"
+    },
+    "Экспорт функции с именем файла": {
+      "scope": "javascript,typescript,javascriptreact,typescriptreact",
+      "prefix": "ef",
+      "body": [
+        "export function ${TM_FILENAME_BASE}() {",
+        " ",
+        "return (",
+        "    <>",
+        "      $0",
+        "    </>",
+        "  );",
+        "};"
+      ],
+      "description": "Создает экспортированную функцию с именем файла без расширения"
+    },
+    "Импорт стилей из CSS-модуля": {
+        "scope": "javascript,typescript,javascriptreact,typescriptreact",
+        "prefix": "imc",
+        "body": [
+          "import styles from './${TM_FILENAME_BASE/(.*)/${1:/downcase}/}.module.css';"
+        ],
+        "description": "Импорт стилей из CSS-модуля с именем файла в нижнем регистре"
+      },
+    "Импорт обычного CSS": {
+        "scope": "javascript,typescript,javascriptreact,typescriptreact",
+        "prefix": "ic",
+        "body": [
+          "import './${TM_FILENAME_BASE/(.*)/${1:/downcase}/}.css';"
+        ],
+        "description": "Импорт обычного CSS с именем файла в нижнем регистре"
+      }
+}
+
+### 4\. Сохраните файл
+
+1.  Сохраните файл снипетов (Ctrl + S или Cmd + S на Mac).
+
+### 5\. Используйте снипеты
+
+1.  Теперь вы можете использовать свои снипеты в редакторе. Например, в файле JavaScript или TypeScript начните вводить префикс снипета (например, `eaf`), и VS Code предложит вам использовать соответствующий снипет.
+
+
 * * * * *
